@@ -1,29 +1,53 @@
-import { ArrowLeft, Code2 } from 'lucide-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+import { Hero } from '../components/Hero';
+import { Portfolio } from '../components/Portfolio';
+import { TechStrip } from '../components/TechStrip';
+import { Certification } from '../components/Certification';
+import { projects, certificate, CONTACT_URL } from '../data/projects';
+
+const techTags = ['REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'VITE', 'NODE.JS', 'GIT', 'LIGHTHOUSE 100/100'];
 
 export function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const target = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!target) return;
+    requestAnimationFrame(() => {
+      document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }, [location.state]);
+
   return (
-    <div className="relative flex min-h-dvh flex-col items-center justify-center px-6 py-16">
-      <a
-        href="https://rymn.me"
-        className="absolute top-6 left-6 inline-flex items-center gap-2 text-sm text-white/50 transition-colors hover:text-white/80"
-      >
-        <ArrowLeft className="size-4" aria-hidden />
-        rymn.me
-      </a>
+    <>
+      <Hero />
+      <TechStrip tags={techTags} />
+      <Certification certificate={certificate} />
+      <Portfolio projects={projects} />
 
-      <div className="flex max-w-xl flex-col items-center text-center">
-        <div className="mb-6 flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5">
-          <Code2 className="size-7 text-white/80" aria-hidden />
+      <section className="relative z-20 mx-auto max-w-6xl px-4 py-12 sm:px-8 sm:py-20">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-xl border border-graphite-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-10">
+          <div>
+            <h2 className="font-display text-xl font-medium text-graphite-900 sm:text-2xl">
+              Masz w głowie projekt strony?
+            </h2>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-graphite-600">
+              Napisz przez formularz na rymn.me — odpowiadam osobiście, bez agencji i pośredników.
+            </p>
+          </div>
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex shrink-0 items-center gap-2 rounded-md bg-graphite-900 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-black"
+          >
+            Formularz kontaktowy
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+          </a>
         </div>
-
-        <p className="mb-3 text-xs tracking-[0.3em] text-white/40 uppercase">Web Development</p>
-        <h1 className="font-display mb-4 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-          dev.rymn.me
-        </h1>
-        <p className="text-base leading-relaxed text-white/55 text-balance sm:text-lg">
-          Portfolio stron internetowych — React, TypeScript i Tailwind CSS. Wkrótce więcej projektów.
-        </p>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
