@@ -91,7 +91,7 @@ function ReservationForm() {
       </button>
       {sent && (
         <p className="text-xs text-stone-500 sm:col-span-2">
-          To jest strona demonstracyjna — rezerwacja nie została faktycznie wysłana ani zapisana.
+          To jest strona demonstracyjna - rezerwacja nie została faktycznie wysłana ani zapisana.
         </p>
       )}
     </form>
@@ -149,7 +149,7 @@ export function Kawiarnia() {
             Kawa z sąsiedztwa, palona z pasją
           </h2>
           <p className="mt-4 leading-relaxed text-stone-600">
-            Ziarno powstało z prostego pomysłu — dobra kawa nie musi być skomplikowana. Palimy małe partie,
+            Ziarno powstało z prostego pomysłu - dobra kawa nie musi być skomplikowana. Palimy małe partie,
             serwujemy je świeże i dbamy o to, żeby każdy stolik czuł się jak twój własny kawałek miasta.
           </p>
         </div>
@@ -258,7 +258,7 @@ export function Kawiarnia() {
       </section>
 
       <footer className="border-t border-stone-200 bg-stone-50 px-4 py-8 text-center text-xs text-stone-400 sm:px-8">
-        Demo strony gastronomicznej — element portfolio{' '}
+        Demo strony gastronomicznej - element portfolio{' '}
         <span className="font-mono text-stone-500">dev.rymn.me</span>. Wszystkie dane są przykładowe.
       </footer>
     </div>

@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Portfolio } from '../components/Portfolio';
+import { DemoShowcase } from '../components/DemoShowcase';
 import { TechStrip } from '../components/TechStrip';
 import { Certification } from '../components/Certification';
-import { projects, certificate, CONTACT_URL } from '../data/projects';
+import { realizedProjects, demoProjects, certificate, CONTACT_URL } from '../data/projects';
 
 const techTags = ['REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'VITE', 'NODE.JS', 'GIT', 'LIGHTHOUSE 100/100'];
 
@@ -25,7 +26,8 @@ export function Home() {
       <Hero />
       <TechStrip tags={techTags} />
       <Certification certificate={certificate} />
-      <Portfolio projects={projects} />
+      <Portfolio projects={realizedProjects} />
+      <DemoShowcase projects={demoProjects} />
 
       <section className="relative z-20 mx-auto max-w-6xl px-4 py-12 sm:px-8 sm:py-20">
         <div className="flex flex-col items-start justify-between gap-6 rounded-xl border border-graphite-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-10">
@@ -34,7 +36,7 @@ export function Home() {
               Masz w głowie projekt strony?
             </h2>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-graphite-600">
-              Napisz przez formularz na rymn.me — odpowiadam osobiście, bez agencji i pośredników.
+              Napisz przez formularz na rymn.me - odpowiadam osobiście, bez agencji i pośredników.
             </p>
           </div>
           <a

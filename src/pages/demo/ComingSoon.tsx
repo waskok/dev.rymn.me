@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Hammer } from 'lucide-react';
 import { easeOut } from '../../lib/motion';
 
-/** Placeholder for the not-yet-decided second demo — swap for a real page once the concept is set. */
+/** Placeholder for the not-yet-decided second demo - swap for a real page once the concept is set. */
 export function ComingSoon() {
   return (
     <motion.section
@@ -20,13 +20,13 @@ export function ComingSoon() {
         Kolejne demo w budowie
       </h1>
       <p className="mt-4 max-w-lg text-balance leading-relaxed text-graphite-600">
-        Ta karta portfolio czeka na kolejny projekt — inna branża, inny styl. Wróć tu wkrótce albo
+        Ta karta portfolio czeka na kolejny projekt - inna branża, inny styl. Wróć tu wkrótce albo
         zajrzyj na resztę portfolio.
       </p>
 
       <Link
         to="/"
-        state={{ scrollTo: 'portfolio' }}
+        state={{ scrollTo: 'demo' }}
         className="mt-9 inline-flex items-center gap-2 rounded-md border border-graphite-300 px-5 py-3 text-sm font-medium text-graphite-900 transition-colors hover:border-graphite-500 hover:bg-graphite-100"
       >
         <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />

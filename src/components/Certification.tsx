@@ -61,7 +61,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
         >
           <img
             src={cert.image}
-            alt={`Certyfikat Google — ${cert.title} (dane osobowe ukryte)`}
+            alt={`Certyfikat Google - ${cert.title} (dane osobowe ukryte)`}
             className="h-full w-full object-cover"
             loading="lazy"
           />

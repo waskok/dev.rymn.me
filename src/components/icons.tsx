@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-/** Official 4-color Google "G" mark — used to credential the AI certificate as a Google program. */
+/** Official 4-color Google "G" mark - used to credential the AI certificate as a Google program. */
 export function GoogleIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 48 48" {...props}>
@@ -24,7 +24,7 @@ export function GoogleIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Hand-drawn Discord glyph — lucide-react ships no brand icons. */
+/** Hand-drawn Discord glyph - lucide-react ships no brand icons. */
 export function DiscordIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -33,7 +33,7 @@ export function DiscordIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Hand-drawn GitHub glyph — lucide-react ships no brand icons. */
+/** Hand-drawn GitHub glyph - lucide-react ships no brand icons. */
 export function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

@@ -26,7 +26,7 @@ interface LighthouseBadgeProps {
   scores: LighthouseScores;
 }
 
-/** Compact Lighthouse score readout — reused on each real (non-demo) project card. */
+/** Compact Lighthouse score readout - reused on each real (non-demo) project card. */
 export function LighthouseBadge({ scores }: LighthouseBadgeProps) {
   return (
     <div className="flex items-center gap-3.5">

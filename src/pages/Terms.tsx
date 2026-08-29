@@ -20,7 +20,7 @@ const sections: readonly Section[] = [
     title: '2. Wymagania techniczne',
     paragraphs: [
       'Do korzystania z Serwisu wystarczy urządzenie z dostępem do internetu oraz aktualna przeglądarka wspierająca HTML5, CSS3 i JavaScript.',
-      'Serwis nie wymaga rejestracji, logowania ani akceptacji plików cookies — jest statyczną stroną prezentacyjną.',
+      'Serwis nie wymaga rejestracji, logowania ani akceptacji plików cookies - jest statyczną stroną prezentacyjną.',
     ],
   },
   {
@@ -34,7 +34,7 @@ const sections: readonly Section[] = [
     title: '4. Charakter demonstracyjny podstron „/demo”',
     paragraphs: [
       'Podstrony dostępne w sekcji „/demo” (np. demonstracyjna strona kawiarni) prezentują fikcyjne projekty i marki, stworzone wyłącznie w celu zaprezentowania umiejętności front-endowych Administratora.',
-      'Żadna z tych podstron nie stanowi rzeczywistej oferty handlowej, a formularze w nich zawarte (np. „rezerwacja stolika”) nie umożliwiają złożenia jakiegokolwiek realnego zamówienia czy rezerwacji — wpisane dane nie są nigdzie wysyłane ani zapisywane.',
+      'Żadna z tych podstron nie stanowi rzeczywistej oferty handlowej, a formularze w nich zawarte (np. „rezerwacja stolika”) nie umożliwiają złożenia jakiegokolwiek realnego zamówienia czy rezerwacji - wpisane dane nie są nigdzie wysyłane ani zapisywane.',
     ],
   },
   {

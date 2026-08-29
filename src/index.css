@@ -4,7 +4,7 @@
 @import "@fontsource-variable/jetbrains-mono/wght.css";
 
 /**
- * "Graphite" palette — light, monochrome grays (no colorful ambient glows
+ * "Graphite" palette - light, monochrome grays (no colorful ambient glows
  * like the main hub) with a single functional accent (emerald) reserved for
  * "live / good score" signals. Headings use Space Grotesk, body text Inter,
  * and every label/tag/code element uses JetBrains Mono for a developer-tool feel.
@@ -95,10 +95,4 @@ body {
 
 .text-balance {
   text-wrap: balance;
-}
-
-/* Faint dot-grid — replaces the hub's colorful blurred orbs with a flat, technical texture. */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(25, 26, 29, 0.14) 1px, transparent 1px);
-  background-size: 24px 24px;
 }

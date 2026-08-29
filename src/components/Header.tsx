@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
 import { AnimatePresence, motion, useMotionTemplate, useTransform, useScroll } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
@@ -8,16 +8,13 @@ import { useSectionNav } from '../lib/useSectionNav';
 import { easeOut } from '../lib/motion';
 import { CONTACT_URL } from '../data/projects';
 
-function Logo({ onClick }: { onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void }) {
+function Logo({ onClick }: { onClick: (event: MouseEvent<HTMLAnchorElement>) => void }) {
   return (
-    <Link
-      to="/"
-      onClick={onClick}
-      className="font-mono flex items-center text-[15px] font-medium tracking-tight text-graphite-900 sm:text-base"
-    >
-      <span className="text-graphite-500">&lt;</span>
-      dev<span className="text-graphite-600">.rymn.me</span>
-      <span className="text-graphite-500">/&gt;</span>
+    <Link to="/" onClick={onClick} className="flex items-center gap-2.5">
+      <img src="/favicon.svg" alt="" className="h-8 w-8 shrink-0 rounded-lg" />
+      <span className="font-mono text-[15px] font-medium tracking-tight text-graphite-900 sm:text-base">
+        dev<span className="text-graphite-500">.rymn.me</span>
+      </span>
     </Link>
   );
 }
@@ -26,6 +23,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogoClick = useLogoClick();
   const handlePortfolioClick = useSectionNav('portfolio');
+  const handleDemoClick = useSectionNav('demo');
 
   const { scrollY } = useScroll();
   const borderOpacity = useTransform(scrollY, [0, 120], [0, 1]);
@@ -41,10 +39,10 @@ export function Header() {
       style={{ borderBottomColor: borderColor, backgroundColor }}
       className="sticky top-0 z-50 border-b border-transparent backdrop-blur-xl"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-8 sm:py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-8 sm:py-4">
         <Logo onClick={handleLogoClick} />
 
-        <nav className="hidden items-center gap-8 sm:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           <a
             href="#portfolio"
             onClick={handlePortfolioClick}
@@ -53,10 +51,18 @@ export function Header() {
             portfolio
             <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-graphite-500 transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </a>
+          <a
+            href="#demo"
+            onClick={handleDemoClick}
+            className="font-mono group relative text-[13px] text-graphite-600 transition-colors hover:text-graphite-900"
+          >
+            jak może wyglądać twoja strona
+            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-graphite-500 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+          </a>
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <StatusPill />
           </div>
 
@@ -64,7 +70,7 @@ export function Header() {
             href={CONTACT_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-1.5 rounded-md border border-graphite-300 px-4 py-2 text-[13px] font-medium text-graphite-900 transition-colors hover:border-graphite-500 hover:bg-graphite-100 sm:flex"
+            className="hidden items-center gap-1.5 rounded-md border border-graphite-300 px-4 py-2 text-[13px] font-medium text-graphite-900 transition-colors hover:border-graphite-500 hover:bg-graphite-100 lg:flex"
           >
             Kontakt
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
@@ -75,7 +81,7 @@ export function Header() {
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-label={isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
             aria-expanded={isMenuOpen}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-graphite-300 text-graphite-600 transition-colors hover:text-graphite-900 sm:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-graphite-300 text-graphite-600 transition-colors hover:text-graphite-900 lg:hidden"
           >
             {isMenuOpen ? <X className="h-4.5 w-4.5" strokeWidth={1.75} /> : <Menu className="h-4.5 w-4.5" strokeWidth={1.75} />}
           </button>
@@ -89,7 +95,7 @@ export function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: easeOut }}
-            className="overflow-hidden border-t border-graphite-200 sm:hidden"
+            className="overflow-hidden border-t border-graphite-200 lg:hidden"
           >
             <div className="flex flex-col gap-4 px-4 py-5">
               <StatusPill />
@@ -102,6 +108,16 @@ export function Header() {
                 className="font-mono text-sm text-graphite-600"
               >
                 portfolio
+              </a>
+              <a
+                href="#demo"
+                onClick={(event) => {
+                  handleDemoClick(event);
+                  setIsMenuOpen(false);
+                }}
+                className="font-mono text-sm text-graphite-600"
+              >
+                jak może wyglądać twoja strona
               </a>
               <a
                 href={CONTACT_URL}

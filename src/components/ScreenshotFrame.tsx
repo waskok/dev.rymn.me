@@ -1,9 +1,11 @@
+import { ImageOff } from 'lucide-react';
+
 interface ScreenshotFrameProps {
   domain: string;
   screenshot?: string;
 }
 
-/** Faux browser chrome wrapping a project screenshot — falls back to a labeled placeholder. */
+/** Faux browser chrome wrapping a project screenshot - falls back to a labeled placeholder. */
 export function ScreenshotFrame({ domain, screenshot }: ScreenshotFrameProps) {
   return (
     <div className="overflow-hidden rounded-lg border border-graphite-200 bg-graphite-50">
@@ -15,17 +17,18 @@ export function ScreenshotFrame({ domain, screenshot }: ScreenshotFrameProps) {
           {domain}
         </span>
       </div>
-      <div className="dot-grid relative aspect-video w-full overflow-hidden bg-graphite-100">
+      <div className="relative aspect-video w-full overflow-hidden bg-graphite-100">
         {screenshot ? (
           <img
             src={screenshot}
-            alt={`Zrzut ekranu — ${domain}`}
+            alt={`Zrzut ekranu - ${domain}`}
             className="h-full w-full object-cover object-top"
             loading="lazy"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-mono text-[11px] text-graphite-600">zrzut ekranu — wkrótce</span>
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-graphite-400">
+            <ImageOff className="h-5 w-5" strokeWidth={1.5} />
+            <span className="font-mono text-[11px] text-graphite-600">zrzut ekranu - wkrótce</span>
           </div>
         )}
       </div>
