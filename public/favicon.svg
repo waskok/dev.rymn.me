@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tło Bento/Glass (Subtelny gradient, nie totalna czerń) -->
+  <rect width="32" height="32" rx="6" fill="url(#paint0_linear)"/>
+  
+  <!-- Nawiasy Srebrne (< >) -->
+  <path d="M8.5 11.5L4.5 16L8.5 20.5" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23.5 11.5L27.5 16L23.5 20.5" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Litera 'r' Biała (#FFFFFF) -->
+  <path d="M14 12V21H16V17C16 15.5 17 14.5 18.5 14.5C19 14.5 19.5 14.6 19.8 14.8V12.8C19.5 12.6 19 12.5 18.5 12.5C17.2 12.5 16.3 13.1 15.8 14.1L15.6 12H14Z" fill="#FFFFFF"/>
+
+  <defs>
+    <linearGradient id="paint0_linear" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A2A2A"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+
+// `base: './'` keeps all built asset paths relative, which is required
+// for a plain static FTP deployment to a subdomain root (dev.rymn.me).
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  base: './',
+  server: {
+    host: true,
+    port: 5181,
+    strictPort: true,
+  },
+});

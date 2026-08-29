@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource-variable/space-grotesk/wght.css";
+
+@theme {
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
+
+  --color-void-950: #050505;
+  --color-void-900: #0a0a0a;
+  --color-void-800: #121212;
+  --color-void-700: #1c1c1c;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-void-950);
+  color: #f5f5f5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
