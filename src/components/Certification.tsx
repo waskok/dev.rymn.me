@@ -53,10 +53,12 @@ export function Certification({ certificate: cert }: CertificationProps) {
           </dl>
         </div>
 
-        <a
+        <motion.a
           href={cert.image}
           target="_blank"
           rel="noreferrer"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.25, ease: easeOut }}
           className="group relative block overflow-hidden rounded-lg border border-graphite-200"
         >
           <img
@@ -71,7 +73,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
               <ExternalLink className="h-3 w-3" strokeWidth={2} />
             </span>
           </span>
-        </a>
+        </motion.a>
       </motion.div>
     </section>
   );

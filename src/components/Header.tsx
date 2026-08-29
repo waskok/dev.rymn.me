@@ -8,6 +8,9 @@ import { useSectionNav } from '../lib/useSectionNav';
 import { easeOut } from '../lib/motion';
 import { CONTACT_URL } from '../data/projects';
 
+const navButtonClass =
+  'rounded-lg border border-graphite-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-graphite-700 uppercase shadow-sm transition-all hover:border-graphite-400 hover:bg-graphite-50 hover:shadow-md active:scale-[0.98]';
+
 function Logo({ onClick }: { onClick: (event: MouseEvent<HTMLAnchorElement>) => void }) {
   return (
     <Link to="/" onClick={onClick} className="flex items-center gap-2.5">
@@ -27,7 +30,7 @@ export function Header() {
 
   const { scrollY } = useScroll();
   const borderOpacity = useTransform(scrollY, [0, 120], [0, 1]);
-  const bgOpacity = useTransform(scrollY, [0, 120], [0, 0.85]);
+  const bgOpacity = useTransform(scrollY, [0, 120], [0, 0.9]);
   const borderColor = useMotionTemplate`rgba(226, 226, 231, ${borderOpacity})`;
   const backgroundColor = useMotionTemplate`rgba(250, 250, 250, ${bgOpacity})`;
 
@@ -42,26 +45,17 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-8 sm:py-4">
         <Logo onClick={handleLogoClick} />
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          <a
-            href="#portfolio"
-            onClick={handlePortfolioClick}
-            className="font-mono group relative text-[13px] text-graphite-600 transition-colors hover:text-graphite-900"
-          >
-            portfolio
-            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-graphite-500 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+        <nav className="hidden items-center gap-2 lg:flex">
+          <a href="#portfolio" onClick={handlePortfolioClick} className={navButtonClass}>
+            Portfolio
           </a>
-          <a
-            href="#demo"
-            onClick={handleDemoClick}
-            className="font-mono group relative text-[13px] text-graphite-600 transition-colors hover:text-graphite-900"
-          >
-            jak może wyglądać twoja strona
-            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-graphite-500 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+          <a href="#demo" onClick={handleDemoClick} className={navButtonClass}>
+            <span className="hidden xl:inline">Jak Wygląda Twoja Strona</span>
+            <span className="xl:hidden">Twoja Strona</span>
           </a>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="hidden lg:block">
             <StatusPill />
           </div>
@@ -70,7 +64,7 @@ export function Header() {
             href={CONTACT_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-1.5 rounded-md border border-graphite-300 px-4 py-2 text-[13px] font-medium text-graphite-900 transition-colors hover:border-graphite-500 hover:bg-graphite-100 lg:flex"
+            className={`${navButtonClass} hidden lg:inline-flex items-center gap-1.5`}
           >
             Kontakt
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
@@ -81,7 +75,7 @@ export function Header() {
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-label={isMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
             aria-expanded={isMenuOpen}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-graphite-300 text-graphite-600 transition-colors hover:text-graphite-900 lg:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-graphite-200 bg-white text-graphite-600 shadow-sm transition-all hover:border-graphite-400 hover:text-graphite-900 lg:hidden"
           >
             {isMenuOpen ? <X className="h-4.5 w-4.5" strokeWidth={1.75} /> : <Menu className="h-4.5 w-4.5" strokeWidth={1.75} />}
           </button>
@@ -97,7 +91,7 @@ export function Header() {
             transition={{ duration: 0.25, ease: easeOut }}
             className="overflow-hidden border-t border-graphite-200 lg:hidden"
           >
-            <div className="flex flex-col gap-4 px-4 py-5">
+            <div className="flex flex-col gap-3 px-4 py-5">
               <StatusPill />
               <a
                 href="#portfolio"
@@ -105,9 +99,9 @@ export function Header() {
                   handlePortfolioClick(event);
                   setIsMenuOpen(false);
                 }}
-                className="font-mono text-sm text-graphite-600"
+                className={navButtonClass}
               >
-                portfolio
+                Portfolio
               </a>
               <a
                 href="#demo"
@@ -115,16 +109,16 @@ export function Header() {
                   handleDemoClick(event);
                   setIsMenuOpen(false);
                 }}
-                className="font-mono text-sm text-graphite-600"
+                className={navButtonClass}
               >
-                jak może wyglądać twoja strona
+                Jak Wygląda Twoja Strona
               </a>
               <a
                 href={CONTACT_URL}
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-1.5 rounded-md border border-graphite-300 px-4 py-3 text-sm font-medium text-graphite-900"
+                className={`${navButtonClass} flex items-center justify-center gap-1.5`}
               >
                 Kontakt
                 <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />

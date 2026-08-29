@@ -78,4 +78,6 @@ export const socials: readonly SocialLink[] = [
 ] as const;
 
 export const CONTACT_URL = 'https://rymn.me/kontakt';
+export const SUPPORT_URL = 'https://buycoffee.to/rymn';
+export const CONTACT_EMAIL = 'kontakt.rymn@gmail.com';
 export const HUB_URL = 'https://rymn.me';

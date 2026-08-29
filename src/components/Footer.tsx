@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { HeartHandshake } from 'lucide-react';
+import { HeartHandshake, Mail } from 'lucide-react';
 import { useLogoClick } from '../lib/useLogoClick';
 import { useSectionNav } from '../lib/useSectionNav';
-import { socials, CONTACT_URL, HUB_URL } from '../data/projects';
+import { socials, SUPPORT_URL, CONTACT_EMAIL, HUB_URL } from '../data/projects';
 import { GoogleIcon } from './icons';
 
 export function Footer() {
@@ -29,6 +29,13 @@ export function Footer() {
               </a>{' '}
               - portfolio web development.
             </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-3 inline-flex items-center gap-1.5 text-sm text-graphite-600 transition-colors hover:text-graphite-900"
+            >
+              <Mail className="h-3.5 w-3.5" strokeWidth={1.75} />
+              {CONTACT_EMAIL}
+            </a>
           </div>
 
           <div>
@@ -76,13 +83,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Only "wesprzyj mnie" here - the contact form CTA already lives in the header and the home page banner. */}
         <div className="mt-10 border-t border-graphite-200 pt-8">
           <a
-            href={CONTACT_URL}
+            href={SUPPORT_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-md border border-graphite-300 px-5 py-3 text-sm font-medium text-graphite-900 transition-colors hover:border-graphite-500 hover:bg-graphite-100 sm:w-auto"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-graphite-300 bg-white px-5 py-3 text-sm font-medium text-graphite-900 shadow-sm transition-all hover:border-graphite-500 hover:shadow-md sm:w-auto"
           >
             <HeartHandshake className="h-4 w-4" strokeWidth={1.75} />
             Wesprzyj mnie
