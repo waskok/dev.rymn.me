@@ -1,13 +1,24 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Portfolio } from '../components/Portfolio';
+import { DemoShowcase } from '../components/DemoShowcase';
 import { TechStrip } from '../components/TechStrip';
 import { Certification } from '../components/Certification';
-import { projects, certificate, CONTACT_URL } from '../data/projects';
+import { easeOut } from '../lib/motion';
+import { realizedProjects, demoProjects, certificate, CONTACT_URL } from '../data/projects';
 
-const techTags = ['REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'VITE', 'NODE.JS', 'GIT', 'LIGHTHOUSE 100/100'];
+const benefitTags = [
+  'SZYBKA ŁADOWANIE',
+  'DZIAŁA NA TELEFONIE',
+  'WIDOCZNA W GOOGLE',
+  'PROFESJONALNY WYGLĄD',
+  'ŁATWY KONTAKT',
+  'WŁASNA DOMENA',
+  'BEZ POŚREDNIKÓW',
+];
 
 export function Home() {
   const location = useLocation();
@@ -23,18 +34,26 @@ export function Home() {
   return (
     <>
       <Hero />
-      <TechStrip tags={techTags} />
+      <TechStrip tags={benefitTags} />
       <Certification certificate={certificate} />
-      <Portfolio projects={projects} />
+      <Portfolio projects={realizedProjects} />
+      <DemoShowcase projects={demoProjects} />
 
       <section className="relative z-20 mx-auto max-w-6xl px-4 py-12 sm:px-8 sm:py-20">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-xl border border-graphite-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.55, ease: easeOut }}
+          className="flex flex-col items-start justify-between gap-6 rounded-xl border border-graphite-200 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-10"
+        >
           <div>
             <h2 className="font-display text-xl font-medium text-graphite-900 sm:text-2xl">
-              Masz w głowie projekt strony?
+              Chcesz, żeby klienci łatwiej Cię znaleźli?
             </h2>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-graphite-600">
-              Napisz przez formularz na rymn.me — odpowiadam osobiście, bez agencji i pośredników.
+              Opisz mi swoją firmę - odpowiem osobiście, bez zobowiązań i bez pośredników. Wspólnie ustalimy, jak
+              ma wyglądać Twoja strona.
             </p>
           </div>
           <a
@@ -46,7 +65,7 @@ export function Home() {
             Formularz kontaktowy
             <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
           </a>
-        </div>
+        </motion.div>
       </section>
     </>
   );

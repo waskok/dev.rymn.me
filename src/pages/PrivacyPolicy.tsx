@@ -13,7 +13,7 @@ const sections: readonly Section[] = [
     title: '1. Postanowienia ogólne',
     paragraphs: [
       'Niniejsza polityka prywatności opisuje zasady przetwarzania danych osobowych osób odwiedzających serwis dostępny pod adresem dev.rymn.me (dalej: „Serwis”).',
-      'Serwis jest portfolio web development i częścią ekosystemu rymn.me — głównego huba dostępnego pod adresem rymn.me.',
+      'Serwis jest portfolio web development i częścią ekosystemu rymn.me - głównego huba dostępnego pod adresem rymn.me.',
     ],
   },
   {
@@ -27,40 +27,33 @@ const sections: readonly Section[] = [
     title: '3. Charakter Serwisu i zakres zbieranych danych',
     paragraphs: [
       'Serwis jest statyczną stroną prezentującą portfolio i nie posiada własnego formularza kontaktowego, systemu logowania, analityki ani żadnego backendu przetwarzającego dane osobowe.',
-      'Podczas zwykłego przeglądania Serwisu mogą być automatycznie zbierane standardowe dane techniczne generowane przez ruch sieciowy (np. adres IP, typ przeglądarki, czas żądania) — wyłącznie przez dostawcę hostingu, w celu zapewnienia bezpieczeństwa i stabilności działania.',
+      'Podczas zwykłego przeglądania Serwisu mogą być automatycznie zbierane standardowe dane techniczne generowane przez ruch sieciowy (np. adres IP, typ przeglądarki, czas żądania) - wyłącznie przez dostawcę hostingu, w celu zapewnienia bezpieczeństwa i stabilności działania.',
       'Serwis nie zbiera, nie przechowuje i nie przetwarza żadnych danych osobowych podanych przez odwiedzających w jego obrębie.',
     ],
   },
   {
     title: '4. Formularz kontaktowy (poza Serwisem)',
     paragraphs: [
-      'Wszelki kontakt oraz wysyłka wiadomości odbywa się poprzez formularz dostępny na rymn.me/kontakt — Serwis nie udostępnia własnego formularza.',
+      'Wszelki kontakt oraz wysyłka wiadomości odbywa się poprzez formularz dostępny na rymn.me/kontakt - Serwis nie udostępnia własnego formularza.',
       'Przetwarzanie danych podanych w tym formularzu (np. imię, e-mail, treść wiadomości) opisuje odrębna polityka prywatności obowiązująca w serwisie rymn.me, dostępna pod adresem:',
     ],
   },
   {
-    title: '5. Demo prezentowane w portfolio',
-    paragraphs: [
-      'Podstrony w sekcji „/demo” (np. demonstracyjna strona kawiarni) są fikcyjnymi projektami prezentującymi umiejętności front-endowe i nie reprezentują żadnej rzeczywistej działalności.',
-      'Formularze widoczne w tych demo (np. „rezerwacja stolika”) mają charakter wyłącznie ilustracyjny. Wpisane w nich dane nie są wysyłane, zapisywane ani przekazywane do jakiegokolwiek systemu — po odświeżeniu strony znikają bezpowrotnie.',
-    ],
-  },
-  {
-    title: '6. Pliki cookies i pamięć lokalna',
+    title: '5. Pliki cookies i pamięć lokalna',
     paragraphs: [
       'Serwis nie wykorzystuje własnych plików cookies, nie ustawia identyfikatorów śledzących i nie korzysta z narzędzi analitycznych ani reklamowych.',
-      'Ze względu na statyczny charakter Serwisu nie jest wyświetlany pasek zgody na cookies — Serwis po prostu ich nie używa.',
+      'Ze względu na statyczny charakter Serwisu nie jest wyświetlany pasek zgody na cookies - Serwis po prostu ich nie używa.',
     ],
   },
   {
-    title: '7. Odbiorcy danych',
+    title: '6. Odbiorcy danych',
     paragraphs: [
       'Jedynym odbiorcą standardowych danych technicznych (logów serwera) może być dostawca hostingu, w zakresie niezbędnym do świadczenia usługi hostingowej.',
       'Dane nie są sprzedawane, wynajmowane ani udostępniane w celach marketingowych osobom trzecim.',
     ],
   },
   {
-    title: '8. Prawa osób, których dane dotyczą',
+    title: '7. Prawa osób, których dane dotyczą',
     paragraphs: [
       'Każda osoba, której dane są przetwarzane (np. w związku z korespondencją prowadzoną poza Serwisem), ma prawo do dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo do wniesienia sprzeciwu wobec przetwarzania oraz do przenoszenia danych.',
       'W celu skorzystania z powyższych praw wystarczy skontaktować się z Administratorem, korzystając z danych podanych w punkcie 2.',
@@ -68,13 +61,13 @@ const sections: readonly Section[] = [
     ],
   },
   {
-    title: '9. Prawo właściwe',
+    title: '8. Prawo właściwe',
     paragraphs: [
       'W zakresie nieuregulowanym niniejszą polityką zastosowanie mają obowiązujące przepisy prawa polskiego, w tym RODO.',
     ],
   },
   {
-    title: '10. Zmiany w polityce prywatności',
+    title: '9. Zmiany w polityce prywatności',
     paragraphs: [
       'Niniejsza polityka może być okresowo aktualizowana, w szczególności w związku z rozwojem Serwisu.',
       'O wszelkich istotnych zmianach odwiedzający zostaną poinformowani poprzez publikację nowej wersji polityki wraz z datą jej ostatniej aktualizacji.',

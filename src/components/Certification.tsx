@@ -25,7 +25,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
           </span>
 
           <h2 className="font-display mt-4 text-2xl font-medium text-graphite-900 sm:text-3xl">
-            Profesjonalne wykorzystanie AI w automatyzacji pracy
+            Nowoczesne narzędzia w służbie Twojej firmy
           </h2>
 
           <p className="mt-3 text-sm leading-relaxed text-graphite-600 sm:text-base">{cert.description}</p>
@@ -53,15 +53,17 @@ export function Certification({ certificate: cert }: CertificationProps) {
           </dl>
         </div>
 
-        <a
+        <motion.a
           href={cert.image}
           target="_blank"
           rel="noreferrer"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.25, ease: easeOut }}
           className="group relative block overflow-hidden rounded-lg border border-graphite-200"
         >
           <img
             src={cert.image}
-            alt={`Certyfikat Google — ${cert.title} (dane osobowe ukryte)`}
+            alt={`Certyfikat Google - ${cert.title} (dane osobowe ukryte)`}
             className="h-full w-full object-cover"
             loading="lazy"
           />
@@ -71,7 +73,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
               <ExternalLink className="h-3 w-3" strokeWidth={2} />
             </span>
           </span>
-        </a>
+        </motion.a>
       </motion.div>
     </section>
   );

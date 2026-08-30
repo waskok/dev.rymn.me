@@ -4,7 +4,7 @@
 @import "@fontsource-variable/jetbrains-mono/wght.css";
 
 /**
- * "Graphite" palette — light, monochrome grays (no colorful ambient glows
+ * "Graphite" palette - light, monochrome grays (no colorful ambient glows
  * like the main hub) with a single functional accent (emerald) reserved for
  * "live / good score" signals. Headings use Space Grotesk, body text Inter,
  * and every label/tag/code element uses JetBrains Mono for a developer-tool feel.
@@ -55,6 +55,41 @@
       transform: translateY(0);
     }
   }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+  }
+
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.5s ease-in-out infinite;
 }
 
 html {
@@ -95,10 +130,4 @@ body {
 
 .text-balance {
   text-wrap: balance;
-}
-
-/* Faint dot-grid — replaces the hub's colorful blurred orbs with a flat, technical texture. */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(25, 26, 29, 0.14) 1px, transparent 1px);
-  background-size: 24px 24px;
 }

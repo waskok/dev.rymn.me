@@ -3,57 +3,60 @@ import { GithubIcon, DiscordIcon } from '../components/icons';
 import type { Certificate, Project, SocialLink } from '../types';
 
 /**
- * Case studies shown in the portfolio grid. Real, deployed sites (`external`)
- * carry Lighthouse scores; demo sites built inside this repo (`internal`) are
- * playgrounds showcasing range and don't ship a live client project.
- *
- * TODO(rymn): swap `screenshot` placeholders for real captures once ready —
- * drop images into `public/screenshots/` and set the path here.
+ * Real, deployed client sites - carry Lighthouse scores and an actual screenshot.
  */
-export const projects: readonly Project[] = [
+export const realizedProjects: readonly Project[] = [
   {
     id: 'sft',
     index: '01',
-    title: 'SFT',
+    title: 'Sklep komputerowy SFT Computers',
     domain: 'indev.sft.net.pl',
-    description: 'Strona zrealizowana dla klienta — od makiety po wdrożenie, z naciskiem na szybkość i czytelność treści.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    description: 'Kompletna strona firmowa - klienci od razu wiedzą, czym się zajmujecie i jak się z Wami skontaktować.',
+    tags: ['Strona firmowa', 'Szybka', 'Czytelna'],
     kind: 'external',
     href: 'https://indev.sft.net.pl',
+    screenshot: '/screenshots/sft.png',
     lighthouse: { performance: 100, accessibility: 100, bestPractices: 100, seo: 100 },
   },
   {
     id: 'hub',
     index: '02',
-    title: 'Rymn Hub',
+    title: 'Rymn.me',
     domain: 'rymn.me',
-    description: 'Główny hub freelancera — punkt startowy kierujący do dedykowanych portfolio (web, design, wideo).',
-    tags: ['React', 'TypeScript', 'Framer Motion'],
+    description: 'Przejrzyste centrum usług - klient od razu wie, gdzie szukać informacji i jak się skontaktować.',
+    tags: ['Nowoczesny design', 'Przejrzysta', 'Wielostronicowa'],
     kind: 'external',
     href: 'https://rymn.me',
+    screenshot: '/screenshots/rymn-hub.png',
     lighthouse: { performance: 100, accessibility: 100, bestPractices: 100, seo: 100 },
   },
+];
+
+/**
+ * Example sites hosted on separate subdomains - each tile opens the live demo externally.
+ */
+export const demoProjects: readonly Project[] = [
   {
     id: 'demo-kawiarnia',
-    index: '03',
+    index: '01',
     title: 'Kawiarnia',
-    domain: 'dev.rymn.me/demo/kawiarnia',
-    description: 'Demo strony dla lokalu gastronomicznego — menu, galeria, godziny otwarcia i rezerwacja stolika.',
-    tags: ['Demo', 'React', 'Tailwind CSS'],
-    kind: 'internal',
-    href: '/demo/kawiarnia',
+    domain: 'kawiarnia.rymn.me',
+    description: 'Przykład dla lokalu gastronomicznego - menu, galeria, godziny otwarcia i rezerwacja stolika w jednym miejscu.',
+    tags: ['Gastronomia', 'Menu online', 'Rezerwacja'],
+    kind: 'external',
+    href: 'https://kawiarnia.rymn.me',
   },
   {
     id: 'demo-2',
-    index: '04',
+    index: '02',
     title: 'Demo #2',
-    domain: 'dev.rymn.me/demo/…',
-    description: 'Kolejna demo-strona w przygotowaniu — kolejna branża, kolejny styl. Wkrótce dostępna.',
-    tags: ['Demo'],
+    domain: 'wkrótce.rymn.me',
+    description: 'Kolejny przykład w przygotowaniu - inna branża, inny styl. Wkrótce zobaczysz, co jeszcze mogę dla Ciebie zrobić.',
+    tags: ['Wkrótce'],
     kind: 'soon',
-    href: '/demo/w-przygotowaniu',
+    href: '#',
   },
-] as const;
+];
 
 /** Google-issued certificate, shown with personal data redacted (see /public + scripts/redact-certificate.ps1). */
 export const certificate: Certificate = {
@@ -63,7 +66,7 @@ export const certificate: Certificate = {
   partner: 'SGH',
   issueDate: '10 czerwca 2026',
   description:
-    'Pięciotygodniowe szkolenie z profesjonalnego wykorzystania AI w automatyzacji pracy i procesów biznesowych, zakończone pozytywnym wynikiem egzaminu końcowego.',
+    'Certyfikowany kurs Google z wykorzystania nowoczesnych narzędzi - dzięki temu mogę szybciej i sprawniej realizować projekty dla moich klientów.',
   image: '/certyfikat-google-ai-redacted.png',
 };
 
@@ -74,4 +77,6 @@ export const socials: readonly SocialLink[] = [
 ] as const;
 
 export const CONTACT_URL = 'https://rymn.me/kontakt';
+export const SUPPORT_URL = 'https://buycoffee.to/rymn';
+export const CONTACT_EMAIL = 'kontakt.rymn@gmail.com';
 export const HUB_URL = 'https://rymn.me';

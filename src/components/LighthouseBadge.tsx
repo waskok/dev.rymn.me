@@ -26,14 +26,14 @@ interface LighthouseBadgeProps {
   scores: LighthouseScores;
 }
 
-/** Compact Lighthouse score readout — reused on each real (non-demo) project card. */
+/** Compact Lighthouse score readout - reused on each real (non-demo) project card. */
 export function LighthouseBadge({ scores }: LighthouseBadgeProps) {
   return (
     <div className="flex items-center gap-3.5">
-      <Ring label="Perf" value={scores.performance} />
-      <Ring label="A11y" value={scores.accessibility} />
-      <Ring label="Prakt." value={scores.bestPractices} />
-      <Ring label="SEO" value={scores.seo} />
+      <Ring label="Szybkość" value={scores.performance} />
+      <Ring label="Czytelność" value={scores.accessibility} />
+      <Ring label="Jakość" value={scores.bestPractices} />
+      <Ring label="Google" value={scores.seo} />
     </div>
   );
 }

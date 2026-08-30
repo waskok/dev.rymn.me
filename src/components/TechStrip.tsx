@@ -2,7 +2,7 @@ interface TechStripProps {
   tags: readonly string[];
 }
 
-/** Continuous tech ticker — same infinite-scroll technique as a marquee, restyled in mono/graphite. */
+/** Continuous tech ticker - same infinite-scroll technique as a marquee, restyled in mono/graphite. */
 export function TechStrip({ tags }: TechStripProps) {
   const loop = [...tags, ...tags];
 

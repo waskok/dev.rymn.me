@@ -57,19 +57,34 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
   );
 
   const shellClass =
-    'group block rounded-xl border border-graphite-200 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md sm:p-6';
+    'group block rounded-xl border border-graphite-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-graphite-400 hover:shadow-lg sm:p-6';
 
   const MotionWrap = motion.div;
 
-  if (project.kind === 'external') {
+  if (isSoon) {
     return (
       <MotionWrap
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.55, ease: easeOut, delay }}
+        className={`${shellClass} cursor-default opacity-80 hover:translate-y-0 hover:shadow-sm`}
       >
-        <a href={project.href} target="_blank" rel="noreferrer" className={`${shellClass} hover:border-graphite-400`}>
+        {body}
+      </MotionWrap>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <MotionWrap
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ y: -4 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.55, ease: easeOut, delay }}
+      >
+        <a href={project.href} target="_blank" rel="noreferrer" className={shellClass}>
           {body}
         </a>
       </MotionWrap>
@@ -80,10 +95,11 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
     <MotionWrap
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.55, ease: easeOut, delay }}
     >
-      <Link to={project.href} className={`${shellClass} hover:border-graphite-400`}>
+      <Link to={project.href} className={shellClass}>
         {body}
       </Link>
     </MotionWrap>
