@@ -61,7 +61,21 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
 
   const MotionWrap = motion.div;
 
-  if (project.kind === 'external') {
+  if (isSoon) {
+    return (
+      <MotionWrap
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.55, ease: easeOut, delay }}
+        className={`${shellClass} cursor-default opacity-80 hover:translate-y-0 hover:shadow-sm`}
+      >
+        {body}
+      </MotionWrap>
+    );
+  }
+
+  if (isExternal) {
     return (
       <MotionWrap
         initial={{ opacity: 0, y: 24 }}

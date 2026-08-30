@@ -17,12 +17,12 @@ export function DemoShowcase({ projects }: DemoShowcaseProps) {
         transition={{ duration: 0.5, ease: easeOut }}
         className="mb-10 max-w-lg"
       >
-        <span className="font-mono text-xs tracking-[0.25em] text-graphite-600 uppercase">demo</span>
+        <span className="font-mono text-xs tracking-[0.25em] text-graphite-600 uppercase">przykłady</span>
         <h2 className="font-display mt-3 text-2xl font-medium text-graphite-900 sm:text-3xl">
           Zobacz, jak może wyglądać Twoja strona
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-graphite-600 sm:text-base">
-          Kliknij na przykładową realizację, żeby zobaczyć pełne demo - kolejne branże i style dołączą wkrótce.
+          Kliknij na przykład i zobacz pełną stronę na własnej subdomenie - kolejne branże dołączę wkrótce.
         </p>
       </motion.div>
 

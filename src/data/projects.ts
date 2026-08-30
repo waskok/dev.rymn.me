@@ -9,10 +9,10 @@ export const realizedProjects: readonly Project[] = [
   {
     id: 'sft',
     index: '01',
-    title: 'SFT',
+    title: 'Sklep komputerowy SFT Computers',
     domain: 'indev.sft.net.pl',
-    description: 'Strona zrealizowana dla klienta - od makiety po wdrożenie, z naciskiem na szybkość i czytelność treści.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    description: 'Kompletna strona firmowa - klienci od razu wiedzą, czym się zajmujecie i jak się z Wami skontaktować.',
+    tags: ['Strona firmowa', 'Szybka', 'Czytelna'],
     kind: 'external',
     href: 'https://indev.sft.net.pl',
     screenshot: '/screenshots/sft.png',
@@ -21,10 +21,10 @@ export const realizedProjects: readonly Project[] = [
   {
     id: 'hub',
     index: '02',
-    title: 'Rymn Hub',
+    title: 'Rymn.me',
     domain: 'rymn.me',
-    description: 'Główny hub freelancera - punkt startowy kierujący do dedykowanych portfolio (web, design, wideo).',
-    tags: ['React', 'TypeScript', 'Framer Motion'],
+    description: 'Przejrzyste centrum usług - klient od razu wie, gdzie szukać informacji i jak się skontaktować.',
+    tags: ['Nowoczesny design', 'Przejrzysta', 'Wielostronicowa'],
     kind: 'external',
     href: 'https://rymn.me',
     screenshot: '/screenshots/rymn-hub.png',
@@ -33,29 +33,28 @@ export const realizedProjects: readonly Project[] = [
 ];
 
 /**
- * Demo sites built inside this repo - playgrounds showcasing range and style
- * versatility rather than a real client project. Room to grow to 3-4 later.
+ * Example sites hosted on separate subdomains - each tile opens the live demo externally.
  */
 export const demoProjects: readonly Project[] = [
   {
     id: 'demo-kawiarnia',
     index: '01',
     title: 'Kawiarnia',
-    domain: 'dev.rymn.me/demo/kawiarnia',
-    description: 'Demo strony dla lokalu gastronomicznego - menu, galeria, godziny otwarcia i rezerwacja stolika.',
-    tags: ['Demo', 'React', 'Tailwind CSS'],
-    kind: 'internal',
-    href: '/demo/kawiarnia',
+    domain: 'kawiarnia.rymn.me',
+    description: 'Przykład dla lokalu gastronomicznego - menu, galeria, godziny otwarcia i rezerwacja stolika w jednym miejscu.',
+    tags: ['Gastronomia', 'Menu online', 'Rezerwacja'],
+    kind: 'external',
+    href: 'https://kawiarnia.rymn.me',
   },
   {
     id: 'demo-2',
     index: '02',
     title: 'Demo #2',
-    domain: 'dev.rymn.me/demo/...',
-    description: 'Kolejna demo-strona w przygotowaniu - kolejna branża, kolejny styl. Wkrótce dostępna.',
-    tags: ['Demo'],
+    domain: 'wkrótce.rymn.me',
+    description: 'Kolejny przykład w przygotowaniu - inna branża, inny styl. Wkrótce zobaczysz, co jeszcze mogę dla Ciebie zrobić.',
+    tags: ['Wkrótce'],
     kind: 'soon',
-    href: '/demo/w-przygotowaniu',
+    href: '#',
   },
 ];
 
@@ -67,7 +66,7 @@ export const certificate: Certificate = {
   partner: 'SGH',
   issueDate: '10 czerwca 2026',
   description:
-    'Pięciotygodniowe szkolenie z profesjonalnego wykorzystania AI w automatyzacji pracy i procesów biznesowych, zakończone pozytywnym wynikiem egzaminu końcowego.',
+    'Certyfikowany kurs Google z wykorzystania nowoczesnych narzędzi - dzięki temu mogę szybciej i sprawniej realizować projekty dla moich klientów.',
   image: '/certyfikat-google-ai-redacted.png',
 };
 

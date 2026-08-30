@@ -3,10 +3,10 @@ import { easeOut } from '../lib/motion';
 import { GoogleIcon } from './icons';
 
 const scores = [
-  { label: 'Performance', short: 'Perf' },
-  { label: 'Accessibility', short: 'A11y' },
-  { label: 'Best Practices', short: 'BP' },
-  { label: 'SEO', short: 'SEO' },
+  { label: 'Szybkość', short: 'Szyb.' },
+  { label: 'Czytelność', short: 'Czyt.' },
+  { label: 'Jakość', short: 'Jak.' },
+  { label: 'Widoczność', short: 'SEO' },
 ] as const;
 
 const lighthouseGreen = '#0cce6b';
@@ -52,7 +52,7 @@ export function LighthouseHeroCard() {
         transition={{ duration: 0.55, ease: easeOut, delay: 0.45 }}
         className="absolute top-0 left-0 z-20 flex h-[5.5rem] w-[5.5rem] items-center justify-center overflow-hidden rounded-2xl border border-graphite-200 bg-white p-2 shadow-xl sm:h-[6.5rem] sm:w-[6.5rem] sm:p-2.5"
       >
-        <img src="/lighthouse-logo.png" alt="Google Lighthouse" className="h-full w-full object-contain" />
+        <img src="/lighthouse-logo.png" alt="Certyfikat jakości Google" className="h-full w-full object-contain" />
       </motion.div>
 
       <motion.div
@@ -71,8 +71,8 @@ export function LighthouseHeroCard() {
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-[#18181b] px-4 py-3.5 pl-[4.75rem] sm:px-5 sm:py-4 sm:pl-[5.5rem]">
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-white sm:text-base">Google Lighthouse</p>
-            <p className="font-mono text-xs text-[#9aa0a6] sm:text-sm">rymn.me</p>
+            <p className="truncate text-sm font-semibold text-white sm:text-base">Jakość strony</p>
+            <p className="font-mono text-xs text-[#9aa0a6] sm:text-sm">sprawdzona przez Google</p>
           </div>
           <span
             className="shrink-0 rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wide uppercase"

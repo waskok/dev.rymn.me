@@ -23,11 +23,11 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-graphite-600">
-              Część ekosystemu{' '}
+              Strony internetowe dla firm lokalnych - część ekosystemu{' '}
               <a href={HUB_URL} target="_blank" rel="noreferrer" className="text-graphite-800 underline underline-offset-4 hover:text-graphite-950">
                 rymn.me
-              </a>{' '}
-              - portfolio web development.
+              </a>
+              .
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
@@ -99,7 +99,7 @@ export function Footer() {
           <span>© {year} rymn - wszystkie prawa zastrzeżone.</span>
           <span className="flex items-center gap-1.5">
             <GoogleIcon className="h-3.5 w-3.5" />
-            Certyfikowany przez Google · zbudowane w React · TypeScript · Tailwind CSS
+            Certyfikowany przez Google · Strony, które przyciągają klientów
           </span>
         </div>
       </div>

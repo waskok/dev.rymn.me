@@ -31,47 +31,40 @@ const sections: readonly Section[] = [
     ],
   },
   {
-    title: '4. Charakter demonstracyjny podstron „/demo”',
-    paragraphs: [
-      'Podstrony dostępne w sekcji „/demo” (np. demonstracyjna strona kawiarni) prezentują fikcyjne projekty i marki, stworzone wyłącznie w celu zaprezentowania umiejętności front-endowych Administratora.',
-      'Żadna z tych podstron nie stanowi rzeczywistej oferty handlowej, a formularze w nich zawarte (np. „rezerwacja stolika”) nie umożliwiają złożenia jakiegokolwiek realnego zamówienia czy rezerwacji - wpisane dane nie są nigdzie wysyłane ani zapisywane.',
-    ],
-  },
-  {
-    title: '5. Formularz kontaktowy (poza Serwisem)',
+    title: '4. Formularz kontaktowy (poza Serwisem)',
     paragraphs: [
       'Serwis nie udostępnia własnego formularza kontaktowego. Wiadomości do Administratora wysyła się poprzez formularz dostępny na rymn.me/kontakt.',
       'Zasady korzystania z tego formularza określa Regulamin serwisu rymn.me, dostępny pod adresem:',
     ],
   },
   {
-    title: '6. Prawa autorskie',
+    title: '5. Prawa autorskie',
     paragraphs: [
       'Treści, kod, projekt graficzny oraz materiały prezentowane w Serwisie (w tym opisy realizacji i portfolio) stanowią własność Administratora i podlegają ochronie prawnoautorskiej, o ile nie wskazano inaczej.',
       'Kopiowanie, rozpowszechnianie lub wykorzystywanie tych materiałów bez zgody Administratora jest niedozwolone.',
     ],
   },
   {
-    title: '7. Bezpłatny charakter Serwisu',
+    title: '6. Bezpłatny charakter Serwisu',
     paragraphs: [
       'Korzystanie z Serwisu jest całkowicie bezpłatne. Administrator nie pobiera żadnych opłat za dostęp do Serwisu ani za korzystanie z jego funkcji.',
     ],
   },
   {
-    title: '8. Odpowiedzialność',
+    title: '7. Odpowiedzialność',
     paragraphs: [
       'Serwis udostępniany jest w stanie takim, w jakim jest („as is”), bez gwarancji nieprzerwanej dostępności lub całkowitego braku błędów.',
       'Administrator dokłada należytej staranności w celu zapewnienia prawidłowego działania Serwisu, jednak w granicach dopuszczalnych przez obowiązujące przepisy prawa nie odpowiada za przerwy w dostępności ani za treść i działanie serwisów zewnętrznych, do których Serwis prowadzi (w tym rymn.me i innych stron portfolio).',
     ],
   },
   {
-    title: '9. Prawo właściwe',
+    title: '8. Prawo właściwe',
     paragraphs: [
       'W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają obowiązujące przepisy prawa polskiego.',
     ],
   },
   {
-    title: '10. Zmiany regulaminu',
+    title: '9. Zmiany regulaminu',
     paragraphs: [
       'Regulamin może być okresowo aktualizowany, w szczególności w związku z rozwojem Serwisu.',
       'O istotnych zmianach odwiedzający zostaną poinformowani poprzez publikację nowej wersji Regulaminu wraz z datą jej ostatniej aktualizacji.',
@@ -105,7 +98,7 @@ export function Terms() {
                   {paragraph}
                 </p>
               ))}
-              {section.title.startsWith('5.') && (
+              {section.title.startsWith('4.') && (
                 <p className="text-sm leading-relaxed text-graphite-600 sm:text-base">
                   <a
                     href={`${HUB_URL}/regulamin`}

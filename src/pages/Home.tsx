@@ -10,7 +10,15 @@ import { Certification } from '../components/Certification';
 import { easeOut } from '../lib/motion';
 import { realizedProjects, demoProjects, certificate, CONTACT_URL } from '../data/projects';
 
-const techTags = ['REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'VITE', 'NODE.JS', 'GIT', 'LIGHTHOUSE 100/100'];
+const benefitTags = [
+  'SZYBKA ŁADOWANIE',
+  'DZIAŁA NA TELEFONIE',
+  'WIDOCZNA W GOOGLE',
+  'PROFESJONALNY WYGLĄD',
+  'ŁATWY KONTAKT',
+  'WŁASNA DOMENA',
+  'BEZ POŚREDNIKÓW',
+];
 
 export function Home() {
   const location = useLocation();
@@ -26,7 +34,7 @@ export function Home() {
   return (
     <>
       <Hero />
-      <TechStrip tags={techTags} />
+      <TechStrip tags={benefitTags} />
       <Certification certificate={certificate} />
       <Portfolio projects={realizedProjects} />
       <DemoShowcase projects={demoProjects} />
@@ -41,10 +49,11 @@ export function Home() {
         >
           <div>
             <h2 className="font-display text-xl font-medium text-graphite-900 sm:text-2xl">
-              Masz w głowie projekt strony?
+              Chcesz, żeby klienci łatwiej Cię znaleźli?
             </h2>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-graphite-600">
-              Napisz przez formularz na rymn.me - odpowiadam osobiście, bez agencji i pośredników.
+              Opisz mi swoją firmę - odpowiem osobiście, bez zobowiązań i bez pośredników. Wspólnie ustalimy, jak
+              ma wyglądać Twoja strona.
             </p>
           </div>
           <a

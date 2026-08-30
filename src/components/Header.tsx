@@ -11,6 +11,9 @@ import { CONTACT_URL } from '../data/projects';
 const navButtonClass =
   'rounded-lg border border-graphite-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-graphite-700 uppercase shadow-sm transition-all hover:border-graphite-400 hover:bg-graphite-50 hover:shadow-md active:scale-[0.98]';
 
+const showcaseButtonClass =
+  'inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-medium text-emerald-950 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.98]';
+
 function Logo({ onClick }: { onClick: (event: MouseEvent<HTMLAnchorElement>) => void }) {
   return (
     <Link to="/" onClick={onClick} className="flex items-center gap-2.5">
@@ -49,9 +52,9 @@ export function Header() {
           <a href="#portfolio" onClick={handlePortfolioClick} className={navButtonClass}>
             Portfolio
           </a>
-          <a href="#demo" onClick={handleDemoClick} className={navButtonClass}>
-            <span className="hidden xl:inline">Jak Wygląda Twoja Strona</span>
-            <span className="xl:hidden">Twoja Strona</span>
+          <a href="#demo" onClick={handleDemoClick} className={showcaseButtonClass}>
+            <span className="hidden xl:inline">Jak może wyglądać Twoja strona</span>
+            <span className="xl:hidden">Twoja strona</span>
           </a>
         </nav>
 
@@ -109,9 +112,9 @@ export function Header() {
                   handleDemoClick(event);
                   setIsMenuOpen(false);
                 }}
-                className={navButtonClass}
+                className={`${showcaseButtonClass} justify-center`}
               >
-                Jak Wygląda Twoja Strona
+                Jak może wyglądać Twoja strona
               </a>
               <a
                 href={CONTACT_URL}

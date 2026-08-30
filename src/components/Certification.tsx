@@ -25,7 +25,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
           </span>
 
           <h2 className="font-display mt-4 text-2xl font-medium text-graphite-900 sm:text-3xl">
-            Profesjonalne wykorzystanie AI w automatyzacji pracy
+            Nowoczesne narzędzia w służbie Twojej firmy
           </h2>
 
           <p className="mt-3 text-sm leading-relaxed text-graphite-600 sm:text-base">{cert.description}</p>

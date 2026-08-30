@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Gauge, Zap } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Gauge, Smartphone } from 'lucide-react';
 import { easeOut } from '../lib/motion';
 import { useSectionNav } from '../lib/useSectionNav';
 import { CONTACT_URL } from '../data/projects';
@@ -38,11 +38,11 @@ export function Hero() {
           <motion.div variants={item} className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-graphite-200 bg-white px-2.5 py-1 text-[11px] font-medium text-graphite-700 shadow-sm">
               <Gauge className="h-3 w-3 text-emerald-600" strokeWidth={2} />
-              Lighthouse 100/100
+              Ładuje się błyskawicznie
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-graphite-200 bg-white px-2.5 py-1 text-[11px] font-medium text-graphite-700 shadow-sm">
-              <Zap className="h-3 w-3 text-amber-500" strokeWidth={2} />
-              React · TypeScript
+              <Smartphone className="h-3 w-3 text-amber-500" strokeWidth={2} />
+              Na telefonie i komputerze
             </span>
           </motion.div>
 
@@ -50,9 +50,9 @@ export function Hero() {
             variants={item}
             className="font-display text-balance mt-6 text-[2.35rem] leading-[1.08] font-medium tracking-tight text-graphite-900 sm:text-5xl lg:text-[3.25rem]"
           >
-            Kod, który ładuje się w{' '}
+            Nowoczesna strona dla{' '}
             <span className="relative inline-block">
-              <span className="relative z-10">milisekundach</span>
+              <span className="relative z-10">Twojej Firmy</span>
               <motion.span
                 aria-hidden
                 initial={{ scaleX: 0 }}
@@ -65,8 +65,9 @@ export function Hero() {
           </motion.h1>
 
           <motion.p variants={item} className="mt-5 max-w-lg text-base leading-relaxed text-graphite-600 sm:text-lg">
-            Projektuję i wdrażam strony pod klientów i własne projekty. Bez ciężkich frameworków tam, gdzie nie
-            trzeba - czysty front-end, mierzalna wydajność, responsywność od pierwszego piksela.
+            Pomagam lokalnym firmom zaistnieć w internecie - tworzę strony, które budzą zaufanie, ułatwiają kontakt
+            z klientami i dobrze wyglądają na każdym urządzeniu. Bez agencji, bez pośredników - rozmawiasz ze mną
+            bezpośrednio.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
@@ -81,9 +82,10 @@ export function Hero() {
             <a
               href="#demo"
               onClick={handleDemoClick}
-              className="flex items-center gap-2 rounded-lg border border-graphite-300 bg-white px-5 py-3 text-sm font-medium text-graphite-900 shadow-sm transition-all hover:border-graphite-500 hover:shadow-md"
+              className="group flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-medium text-emerald-950 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-100"
             >
-              Przykładowe demo
+              Jak może wyglądać Twoja strona
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
             </a>
             <a
               href={CONTACT_URL}
