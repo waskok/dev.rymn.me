@@ -1,0 +1,30 @@
+# dev.rymn.me
+
+> Portfolio web development - nowoczesne strony internetowe dla lokalnych firm. React, TypeScript, Tailwind CSS. Wynik Google Lighthouse 100/100.
+
+Strony tworzone przez freelancera rymn. Część ekosystemu [rymn.me](https://rymn.me).
+
+## Główne strony
+
+- [Strona główna - portfolio](https://dev.rymn.me/): realizacje, przykładowe strony demo, certyfikat Google AI
+- [Polityka prywatności](https://dev.rymn.me/polityka-prywatnosci)
+- [Regulamin](https://dev.rymn.me/regulamin)
+
+## Realizacje
+
+- [SFT Computers - sklep komputerowy](https://indev.sft.net.pl)
+- [rymn.me - hub freelancera](https://rymn.me)
+
+## Przykładowe strony demo
+
+- [Kawiarnia - demo gastronomii](https://kawiarnia.rymn.me)
+
+## Kontakt i wsparcie
+
+- Formularz kontaktowy: https://rymn.me/kontakt
+- E-mail: kontakt.rymn@gmail.com
+- Hub główny: https://rymn.me
+
+## Technologie
+
+React, TypeScript, Vite, Tailwind CSS, Framer Motion. Statyczny front-end, wysoka wydajność i dostępność (WCAG).
