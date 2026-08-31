@@ -1,13 +1,13 @@
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Gauge, Smartphone } from 'lucide-react';
-import { easeOut } from '../lib/motion';
+import { easeOut, entranceDuration } from '../lib/motion';
 import { useSectionNav } from '../lib/useSectionNav';
 import { CONTACT_URL } from '../data/projects';
 import { LighthouseHeroCard } from './LighthouseHeroCard';
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: entranceDuration, ease: easeOut } },
 };
 
 export function Hero() {
@@ -33,7 +33,7 @@ export function Hero() {
         <motion.div
           initial="hidden"
           animate="show"
-          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          variants={{ show: { transition: { staggerChildren: 0.16, delayChildren: 0.1 } } }}
         >
           <motion.div variants={item} className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-graphite-200 bg-white px-2.5 py-1 text-[11px] font-medium text-graphite-700 shadow-sm">
@@ -84,7 +84,7 @@ export function Hero() {
               onClick={handleDemoClick}
               className="group flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-medium text-emerald-950 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-100"
             >
-              Jak może wyglądać Twoja strona
+              Sprawdź Przykłady
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
             </a>
             <a

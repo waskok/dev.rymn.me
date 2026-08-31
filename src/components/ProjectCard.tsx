@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Clock3 } from 'lucide-react';
 import type { Project } from '../types';
-import { easeOut } from '../lib/motion';
+import { fadeUpMotion } from '../lib/motion';
 import { ScreenshotFrame } from './ScreenshotFrame';
 import { LighthouseBadge } from './LighthouseBadge';
 
@@ -12,12 +12,15 @@ interface ProjectCardProps {
   animate?: boolean;
 }
 
+const shellClass =
+  'group block rounded-xl border border-graphite-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-graphite-400 hover:shadow-lg sm:p-6';
+
 export function ProjectCard({ project, delay = 0, animate = true }: ProjectCardProps) {
   const isSoon = project.kind === 'soon';
   const isExternal = project.kind === 'external';
 
   const cta = isSoon ? (
-    <span className="inline-flex items-center gap-2 text-sm font-medium text-graphite-600">
+    <span className="inline-flex items-center gap-2 text-sm font-medium text-graphite-900">
       Wkrótce
       <Clock3 className="h-3.5 w-3.5" strokeWidth={2} />
     </span>
@@ -63,26 +66,19 @@ export function ProjectCard({ project, delay = 0, animate = true }: ProjectCardP
     </>
   );
 
-  const shellClass =
-    'group block rounded-xl border border-graphite-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-graphite-400 hover:shadow-lg sm:p-6';
-
   const motionProps = animate
     ? {
-        initial: { opacity: 0, y: 24 } as const,
-        whileInView: { opacity: 1, y: 0 } as const,
-        viewport: { once: true, margin: '-60px' } as const,
-        transition: { duration: 0.55, ease: easeOut, delay },
+        ...fadeUpMotion(delay),
         whileHover: { y: -4 } as const,
       }
     : { initial: false as const };
 
   if (isSoon) {
     return (
-      <motion.div
-        {...motionProps}
-        className={`${shellClass} cursor-default opacity-80 hover:translate-y-0 hover:shadow-sm`}
-      >
-        {body}
+      <motion.div {...motionProps}>
+        <div className={`${shellClass} cursor-default`} aria-disabled="true">
+          {body}
+        </div>
       </motion.div>
     );
   }

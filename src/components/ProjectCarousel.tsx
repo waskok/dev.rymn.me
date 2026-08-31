@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { entranceDelayStep } from '../lib/motion';
 import type { Project } from '../types';
 import { ProjectCard } from './ProjectCard';
 
@@ -37,7 +38,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
     <>
       <div className="hidden gap-5 sm:grid sm:grid-cols-2">
         {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} delay={0.08 * i} />
+          <ProjectCard key={project.id} project={project} delay={entranceDelayStep * i} />
         ))}
       </div>
 

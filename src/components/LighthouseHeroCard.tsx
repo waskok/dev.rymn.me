@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { easeOut } from '../lib/motion';
+import { entranceTransition } from '../lib/motion';
 import { GoogleIcon } from './icons';
 
 const scores = [
@@ -16,7 +16,7 @@ function ScoreRing({ label, short, delay }: { label: string; short: string; dela
     <motion.div
       initial={{ opacity: 0, scale: 0.88 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, ease: easeOut, delay }}
+      transition={entranceTransition(delay)}
       className="flex flex-col items-center gap-2.5"
     >
       <div
@@ -43,13 +43,13 @@ export function LighthouseHeroCard() {
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: easeOut, delay: 0.25 }}
+      transition={entranceTransition(0.35)}
       className="relative w-full px-6 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.9, x: -8, y: -8 }}
         animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.55, ease: easeOut, delay: 0.45 }}
+        transition={entranceTransition(0.5)}
         className="absolute top-0 left-0 z-20 flex h-[5.5rem] w-[5.5rem] items-center justify-center overflow-hidden rounded-2xl border border-graphite-200 bg-white p-2 shadow-xl sm:h-[6.5rem] sm:w-[6.5rem] sm:p-2.5"
       >
         <img src="/lighthouse-logo.png" alt="Certyfikat jakości Google" className="h-full w-full object-contain" />
@@ -58,7 +58,7 @@ export function LighthouseHeroCard() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9, x: 8, y: 8 }}
         animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.55, ease: easeOut, delay: 0.55 }}
+        transition={entranceTransition(0.65)}
         className="absolute right-0 bottom-0 z-20 flex h-14 w-14 items-center justify-center rounded-xl border border-graphite-200 bg-white shadow-xl sm:h-16 sm:w-16"
       >
         <GoogleIcon className="h-8 w-8 sm:h-9 sm:w-9" />
@@ -84,7 +84,7 @@ export function LighthouseHeroCard() {
 
         <div className="grid grid-cols-2 gap-x-3 gap-y-5 px-4 py-5 sm:gap-x-4 sm:gap-y-6 sm:px-6 sm:py-6">
           {scores.map((score, i) => (
-            <ScoreRing key={score.label} label={score.label} short={score.short} delay={0.45 + i * 0.08} />
+            <ScoreRing key={score.label} label={score.label} short={score.short} delay={0.55 + i * 0.12} />
           ))}
         </div>
       </motion.div>

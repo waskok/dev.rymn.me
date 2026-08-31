@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import type { Certificate } from '../types';
-import { easeOut } from '../lib/motion';
+import { easeOut, fadeUpMotion } from '../lib/motion';
 import { GoogleIcon } from './icons';
 
 interface CertificationProps {
@@ -12,10 +12,7 @@ export function Certification({ certificate: cert }: CertificationProps) {
   return (
     <section className="relative z-20 mx-auto max-w-6xl px-4 py-8 sm:px-8 sm:py-14">
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: easeOut }}
+        {...fadeUpMotion()}
         className="grid gap-8 rounded-xl border border-graphite-200 bg-white p-5 shadow-sm sm:grid-cols-[1.1fr_1fr] sm:p-8"
       >
         <div className="flex flex-col justify-center">

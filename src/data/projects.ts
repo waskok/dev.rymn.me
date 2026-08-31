@@ -52,7 +52,7 @@ export const demoProjects: readonly Project[] = [
     title: 'Demo #2',
     domain: 'wkrótce.rymn.me',
     description: 'Kolejny przykład w przygotowaniu - inna branża, inny styl. Wkrótce zobaczysz, co jeszcze mogę dla Ciebie zrobić.',
-    tags: ['Wkrótce'],
+    tags: ['Demo', 'Wkrótce'],
     kind: 'soon',
     href: '#',
   },
@@ -67,7 +67,7 @@ export const certificate: Certificate = {
   issueDate: '10 czerwca 2026',
   description:
     'Certyfikowany kurs Google z wykorzystania nowoczesnych narzędzi - dzięki temu mogę szybciej i sprawniej realizować projekty dla moich klientów.',
-  image: '/certyfikat-google-ai-redacted.png',
+  image: '/certyfikat-google-ai-redacted.png?v=2',
 };
 
 export const socials: readonly SocialLink[] = [
