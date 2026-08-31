@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Project } from '../types';
-import { ProjectCard } from './ProjectCard';
+import { ProjectCarousel } from './ProjectCarousel';
 import { easeOut } from '../lib/motion';
 
 interface PortfolioProps {
@@ -26,11 +26,7 @@ export function Portfolio({ projects }: PortfolioProps) {
         </p>
       </motion.div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} delay={0.08 * i} />
-        ))}
-      </div>
+      <ProjectCarousel projects={projects} />
     </section>
   );
 }

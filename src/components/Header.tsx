@@ -9,10 +9,10 @@ import { easeOut } from '../lib/motion';
 import { CONTACT_URL } from '../data/projects';
 
 const navButtonClass =
-  'rounded-lg border border-graphite-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-graphite-700 uppercase shadow-sm transition-all hover:border-graphite-400 hover:bg-graphite-50 hover:shadow-md active:scale-[0.98]';
+  'inline-flex items-center gap-1.5 rounded-lg border border-graphite-200 bg-white px-4 py-2 text-sm font-medium text-graphite-700 shadow-sm transition-all hover:border-graphite-400 hover:bg-graphite-50 hover:shadow-md active:scale-[0.98]';
 
 const showcaseButtonClass =
-  'inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-medium text-emerald-950 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.98]';
+  'inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-950 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.98]';
 
 function Logo({ onClick }: { onClick: (event: MouseEvent<HTMLAnchorElement>) => void }) {
   return (
@@ -51,10 +51,12 @@ export function Header() {
         <nav className="hidden items-center gap-2 lg:flex">
           <a href="#portfolio" onClick={handlePortfolioClick} className={navButtonClass}>
             Portfolio
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
           </a>
           <a href="#demo" onClick={handleDemoClick} className={showcaseButtonClass}>
             <span className="hidden xl:inline">Jak może wyglądać Twoja strona</span>
             <span className="xl:hidden">Twoja strona</span>
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
           </a>
         </nav>
 
@@ -105,6 +107,7 @@ export function Header() {
                 className={navButtonClass}
               >
                 Portfolio
+                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
               </a>
               <a
                 href="#demo"
@@ -115,6 +118,7 @@ export function Header() {
                 className={`${showcaseButtonClass} justify-center`}
               >
                 Jak może wyglądać Twoja strona
+                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.9} />
               </a>
               <a
                 href={CONTACT_URL}
