@@ -11,7 +11,7 @@ import { easeOut } from '../lib/motion';
 import { realizedProjects, demoProjects, certificate, CONTACT_URL } from '../data/projects';
 
 const benefitTags = [
-  'SZYBKA ŁADOWANIE',
+  'NOWOCZESNY DESIGN',
   'DZIAŁA NA TELEFONIE',
   'WIDOCZNA W GOOGLE',
   'PROFESJONALNY WYGLĄD',

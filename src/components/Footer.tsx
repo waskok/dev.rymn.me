@@ -96,7 +96,18 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-graphite-200 pt-6 text-xs text-graphite-600 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {year} rymn - wszystkie prawa zastrzeżone.</span>
+          <span>
+            © {year}{' '}
+            <a
+              href={HUB_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-graphite-800 underline underline-offset-4 transition-colors hover:text-graphite-950"
+            >
+              rymn.me
+            </a>{' '}
+            - wszystkie prawa zastrzeżone.
+          </span>
           <span className="flex items-center gap-1.5">
             <GoogleIcon className="h-3.5 w-3.5" />
             Certyfikowany przez Google · Strony, które przyciągają klientów

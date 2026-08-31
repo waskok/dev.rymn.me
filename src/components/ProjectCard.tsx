@@ -9,9 +9,10 @@ import { LighthouseBadge } from './LighthouseBadge';
 interface ProjectCardProps {
   project: Project;
   delay?: number;
+  animate?: boolean;
 }
 
-export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
+export function ProjectCard({ project, delay = 0, animate = true }: ProjectCardProps) {
   const isSoon = project.kind === 'soon';
   const isExternal = project.kind === 'external';
 
@@ -49,8 +50,14 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
         <span className="font-mono shrink-0 text-xs text-graphite-600">{project.index}</span>
       </div>
 
-      <div className="mt-5 flex items-center justify-between gap-4 border-t border-graphite-200 pt-4">
-        {project.lighthouse ? <LighthouseBadge scores={project.lighthouse} /> : <span />}
+      <div className="mt-5 flex flex-col gap-4 border-t border-graphite-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
+        {project.lighthouse ? (
+          <div className="min-w-0 overflow-x-auto">
+            <LighthouseBadge scores={project.lighthouse} />
+          </div>
+        ) : (
+          <span />
+        )}
         {cta}
       </div>
     </>
@@ -59,49 +66,42 @@ export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
   const shellClass =
     'group block rounded-xl border border-graphite-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-graphite-400 hover:shadow-lg sm:p-6';
 
-  const MotionWrap = motion.div;
+  const motionProps = animate
+    ? {
+        initial: { opacity: 0, y: 24 } as const,
+        whileInView: { opacity: 1, y: 0 } as const,
+        viewport: { once: true, margin: '-60px' } as const,
+        transition: { duration: 0.55, ease: easeOut, delay },
+        whileHover: { y: -4 } as const,
+      }
+    : { initial: false as const };
 
   if (isSoon) {
     return (
-      <MotionWrap
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.55, ease: easeOut, delay }}
+      <motion.div
+        {...motionProps}
         className={`${shellClass} cursor-default opacity-80 hover:translate-y-0 hover:shadow-sm`}
       >
         {body}
-      </MotionWrap>
+      </motion.div>
     );
   }
 
   if (isExternal) {
     return (
-      <MotionWrap
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ y: -4 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.55, ease: easeOut, delay }}
-      >
+      <motion.div {...motionProps}>
         <a href={project.href} target="_blank" rel="noreferrer" className={shellClass}>
           {body}
         </a>
-      </MotionWrap>
+      </motion.div>
     );
   }
 
   return (
-    <MotionWrap
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.55, ease: easeOut, delay }}
-    >
+    <motion.div {...motionProps}>
       <Link to={project.href} className={shellClass}>
         {body}
       </Link>
-    </MotionWrap>
+    </motion.div>
   );
 }
