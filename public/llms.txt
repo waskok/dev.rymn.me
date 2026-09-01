@@ -12,12 +12,12 @@ Strony tworzone przez freelancera rymn. Część ekosystemu [rymn.me](https://ry
 
 ## Realizacje
 
-- [SFT Computers - sklep komputerowy](https://indev.sft.net.pl)
+- [SFT Computers - sklep komputerowy, Kraków](https://sft.net.pl)
 - [rymn.me - hub freelancera](https://rymn.me)
 
 ## Przykładowe strony demo
 
-- [Kawiarnia - demo gastronomii](https://kawiarnia.rymn.me)
+- [Aura Coffee - demo kawiarni](https://coffee.rymn.me)
 
 ## Kontakt i wsparcie
 

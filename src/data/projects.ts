@@ -10,11 +10,12 @@ export const realizedProjects: readonly Project[] = [
     id: 'sft',
     index: '01',
     title: 'Sklep komputerowy SFT Computers',
-    domain: 'indev.sft.net.pl',
-    description: 'Kompletna strona firmowa - klienci od razu wiedzą, czym się zajmujecie i jak się z Wami skontaktować.',
+    domain: 'sft.net.pl',
+    description:
+      'Stacjonarny sklep w Krakowie, Osiedle 2 Pułku Lotniczego 1E, 31-867 Kraków - klienci od razu wiedzą, czym się zajmujecie i jak Was znaleźć.',
     tags: ['Strona firmowa', 'Szybka', 'Czytelna'],
     kind: 'external',
-    href: 'https://indev.sft.net.pl',
+    href: 'https://sft.net.pl',
     screenshot: '/screenshots/sft.png',
     lighthouse: { performance: 100, accessibility: 100, bestPractices: 100, seo: 100 },
   },
@@ -37,14 +38,16 @@ export const realizedProjects: readonly Project[] = [
  */
 export const demoProjects: readonly Project[] = [
   {
-    id: 'demo-kawiarnia',
+    id: 'demo-aura-coffee',
     index: '01',
-    title: 'Kawiarnia',
-    domain: 'kawiarnia.rymn.me',
-    description: 'Przykład dla lokalu gastronomicznego - menu, galeria, godziny otwarcia i rezerwacja stolika w jednym miejscu.',
+    title: 'Aura Coffee',
+    domain: 'coffee.rymn.me',
+    description:
+      'Demo kawiarni w Krakowie - pastelowe wnętrze, menu, galeria i rezerwacja stolika w jednym, spójnym layoucie.',
     tags: ['Gastronomia', 'Menu online', 'Rezerwacja'],
     kind: 'external',
-    href: 'https://kawiarnia.rymn.me',
+    href: 'https://coffee.rymn.me',
+    screenshot: '/screenshots/aura-coffee.png',
   },
   {
     id: 'demo-2',
