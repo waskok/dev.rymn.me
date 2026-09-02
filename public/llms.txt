@@ -17,6 +17,7 @@ Strony tworzone przez freelancera rymn. Część ekosystemu [rymn.me](https://ry
 
 ## Przykładowe strony demo
 
+- [FizjoFlow - demo gabinetu fizjoterapii](https://fizjo.rymn.me)
 - [Aura Coffee - demo kawiarni](https://coffee.rymn.me)
 
 ## Kontakt i wsparcie

@@ -38,8 +38,20 @@ export const realizedProjects: readonly Project[] = [
  */
 export const demoProjects: readonly Project[] = [
   {
-    id: 'demo-aura-coffee',
+    id: 'demo-fizjoflow',
     index: '01',
+    title: 'FizjoFlow',
+    domain: 'fizjo.rymn.me',
+    description:
+      'Demo gabinetu fizjoterapii - usługi, opis terapii i umawianie wizyt w przejrzystym, medycznym stylu.',
+    tags: ['Zdrowie', 'Usługi', 'Rezerwacja'],
+    kind: 'external',
+    href: 'https://fizjo.rymn.me',
+    screenshot: '/screenshots/fizjoflow.png',
+  },
+  {
+    id: 'demo-aura-coffee',
+    index: '02',
     title: 'Aura Coffee',
     domain: 'coffee.rymn.me',
     description:
@@ -48,16 +60,6 @@ export const demoProjects: readonly Project[] = [
     kind: 'external',
     href: 'https://coffee.rymn.me',
     screenshot: '/screenshots/aura-coffee.png',
-  },
-  {
-    id: 'demo-2',
-    index: '02',
-    title: 'Demo #2',
-    domain: 'wkrótce.rymn.me',
-    description: 'Kolejny przykład w przygotowaniu - inna branża, inny styl. Wkrótce zobaczysz, co jeszcze mogę dla Ciebie zrobić.',
-    tags: ['Demo', 'Wkrótce'],
-    kind: 'soon',
-    href: '#',
   },
 ];
 
